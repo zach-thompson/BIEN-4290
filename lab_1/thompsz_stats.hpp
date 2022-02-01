@@ -20,7 +20,7 @@ namespace statSpace {
             void set_max(std::vector<float>*);
             void set_mean(std::vector<float>*);
             void set_std(std::vector<float>*);
-            void set_histogram(std::vector<float>*)
+            void set_histogram(std::vector<float>*);
             float get_min();
             float get_max();
             float get_mean();
