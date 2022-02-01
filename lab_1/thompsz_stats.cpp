@@ -3,7 +3,7 @@
 * Author: Zach Thompson
 * Date: 2/1/22
 * Description: Main file for stats class
-* Includes: Definitions for the getter and setter functions for min, max, mean, std
+* Includes: Definitions for the get- and set- functions for min, max, mean, std, and histogram
 */
 
 static void statSpace::statClass set_min(std::vector<float>* file) {

@@ -2,6 +2,6 @@
 /*
 * Author: Zach Thompson
 * Date: 2/1/22
-* Description: tbd
-* Includes: tbd
+* Description: Verifies existence of and loads input data file
+* Includes: load_file
 */
