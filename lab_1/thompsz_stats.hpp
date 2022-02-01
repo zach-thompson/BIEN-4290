@@ -2,7 +2,7 @@
 * Author: Zach Thompson
 * Date: 2/1/22
 * Description: Header file for stats
-* Includes: get_min, get_max, get_mean, get_std, get_hist
+* Includes: getters and setter functions for min, max, mean, std
 */
 
 #ifndef stats_guard
@@ -15,16 +15,21 @@
 
 namespace stats {
     class stats {
-        public: 
-            void set_min();
+        public:
+            void set_min(FILE* filename);
+            void set_max(FILE* filename);
+            void set_mean(FILE* filename);
+            void set_std(FILE* filename);
             float get_min();
-            void set_max();
             float get_max();
-            void set_mean();
             float get_mean();
-            void set_std();
             float get_std();
-            void get_hist(file* name);
+
+        private:
+            float min;
+            float max;
+            float mean;
+            float std;
     };
 }
 
