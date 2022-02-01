@@ -13,13 +13,13 @@
 #include <stdio.h>
 #include <vector>
 
-namespace stats {
-    class stats {
+namespace statSpace {
+    class statClass {
         public:
-            void set_min(FILE* filename);
-            void set_max(FILE* filename);
-            void set_mean(FILE* filename);
-            void set_std(FILE* filename);
+            void set_min(std::vector<float>*);
+            void set_max(std::vector<float>*);
+            void set_mean(std::vector<float>*);
+            void set_std(std::vector<float>*);
             float get_min();
             float get_max();
             float get_mean();

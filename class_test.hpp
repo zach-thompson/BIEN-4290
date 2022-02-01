@@ -9,8 +9,8 @@
 
 // mySpace::yourSpace::myClass
 
-namespace myClass {
-    namespace yourspace {
+namespace mySpace {
+    namespace yourSpace {
         class myClass {
             public: // can be accessed globally
 
