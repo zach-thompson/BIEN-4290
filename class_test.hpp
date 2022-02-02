@@ -19,6 +19,7 @@ namespace mySpace {
                 myClass(std::string name, int init_num_students);
                 myClass(std::string name);
                 myClass();
+                ~myClass(); // destructor, look into this
 
                 int get_num_students();
                 std::string get_name();
