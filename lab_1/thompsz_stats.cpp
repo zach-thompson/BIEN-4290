@@ -6,56 +6,55 @@
 * Includes: Definitions for the get- and set- functions for min, max, mean, std, and histogram
 */
 
-static void statSpace::statClass set_min(std::vector<float>* file) {
+statSpace::statClass::statClass(std::vector<float>* file) {}
+
+void statSpace::statClass::set_min(std::vector<float>* file) {
     float temp_min = 100;
-    for (int i = 0; i <= file@size(); i++) {
-        if (file@(i) < temp_min) {
-            temp_min = file@(i);
+    for (int i = 0; i < file->size(); i++) {
+        if (file->at(i) < temp_min) {
+            temp_min = file->at(i);
         }
     }
-
     this->min = temp_min;
 }
 
-static void statSpace::statClass set_max(std::vector<float>* name) {
+void statSpace::statClass::set_max(std::vector<float>* file) {
     float temp_max = 0;
-    for (int i = 0; i <= file@size(); i++) {
-        if (file@(i) > temp_max) {
-            temp_max = file@(i);
+    for (int i = 0; i < file->size(); i++) {
+        if (file->at(i) > temp_max) {
+            temp_max = file->at(i);
         }
     }
-    
     this->max = temp_max;
 }
 
-static void statSpace::statClass set_mean(std::vector<float>* name) {
+void statSpace::statClass::set_mean(std::vector<float>* file) {
     float sum = 0;
-    float size = file@size();
-    for (int i = 0; i <= size, i++) {
-        sum+= file@(i)
+    float size = file->size();
+    for (int i = 0; i < size; i++) {
+        sum+= file->at(i);
     }
-
     this->mean = sum / size;
 }
 
-static void statSpace::statClass set_std(std::vector<float>* name) {
+void statSpace::statClass::set_std(std::vector<float>* file) {
     // calc std
     float temp_std;
     this->std = temp_std;
 }
 
-static float statSpace::statClass get_min() {
+float statSpace::statClass::get_min() {
     return this->min;
 }
 
-static float statSpace::statClass get_max() {
+float statSpace::statClass::get_max() {
     return this->max;
 }
 
-static float statSpace::statClass get_mean() {
+float statSpace::statClass::get_mean() {
     return this->mean;
 }
 
-static float statSpace::statClass get_std() {
+float statSpace::statClass::get_std() {
     return this->std;
 }

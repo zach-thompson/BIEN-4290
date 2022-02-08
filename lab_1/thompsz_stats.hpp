@@ -16,6 +16,10 @@
 namespace statSpace {
     class statClass {
         public:
+
+            // construct statClass object with a data file
+            statClass(std::vector<float>*);
+
             void set_min(std::vector<float>*);
             void set_max(std::vector<float>*);
             void set_mean(std::vector<float>*);
@@ -25,7 +29,7 @@ namespace statSpace {
             float get_max();
             float get_mean();
             float get_std();
-            float get_histogram();
+            std::string get_histogram();
 
         private:
             float min;
@@ -35,4 +39,4 @@ namespace statSpace {
     };
 }
 
-#endif stats_guard
+#endif
