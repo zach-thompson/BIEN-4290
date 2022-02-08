@@ -27,16 +27,13 @@ int main (int argc, char* argv[]) {
     statClassy.set_max(&file);
     statClassy.set_mean(&file);
     statClassy.set_std(&file);
-    //statClassy.set_histogram(&file);
-
 
     std::cout << "Number of points: " << file.size() << "\n";
     std::cout << "Mean: " << statClassy.get_mean() << "\n";
     std::cout << "STD: " << statClassy.get_std() << "\n";
     std::cout << "Minimum: " << statClassy.get_min() << "\n";
     std::cout << "Maximum: " << statClassy.get_max() << "\n";
-    //std::cout << "Histogram " << statClassy.get_histogram() << "\n";
+    statClassy.make_histogram(&file);
     
     return 0;
-
 }
