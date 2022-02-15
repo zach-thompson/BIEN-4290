@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+#include <stdlib.h>
 #include <vector>
 
 namespace statSpace {
@@ -23,18 +24,18 @@ namespace statSpace {
             void set_min(std::vector<float>*);
             void set_max(std::vector<float>*);
             void set_mean(std::vector<float>*);
-            void set_std(std::vector<float>*);
-            void get_histogram(std::vector<float>*);
+            void set_stddev(std::vector<float>*);
             float get_min();
             float get_max();
             float get_mean();
-            float get_std();
+            float get_stddev();
+            void make_histogram(std::vector<float>*, float mean_in, float std_in);
 
         private:
             float min;
             float max;
             float mean;
-            float std;
+            float stddev;
     };
 }
 
