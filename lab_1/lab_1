@@ -7,6 +7,13 @@ read -p "Which concentration level would you like to analyze? (00 or 05): " sele
 touch EEG_DATA/selected_files.txt
 
 cd EEG_DATA/ERP$selection/
+pwd
+for file in *.txt
+    do cat $file >> /home/thompsz/BIEN-4290/lab_1/EEG_DATA/selected_files.txt
+done
 
-for file in *.txt; do cat $file >> /home/thompsz/BIEN-4290/lab_1/EEG_DATA/selected_files.txt; done
+cd ..
 
+cp selected_files.txt catted_input.dat
+
+rm selected_files.txt
