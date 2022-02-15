@@ -30,6 +30,6 @@ int main (int argc, char* argv[]) {
 
     corrSpace::corrClass corrClassy(&file1, &file2);
 
-    corrClassy.calc_corr(&file1, &file2);
+    std::cout << corrClassy.calc_corr(&file1, &file2);
     return 0;
 }
