@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
+#include "thompsz_stats.hpp"
+#include <math.h>
 
 namespace corrSpace {
     class corrClass {

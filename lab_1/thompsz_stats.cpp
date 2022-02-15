@@ -8,6 +8,8 @@
 */
 
 statSpace::statClass::statClass(std::vector<float>* file) {}
+statSpace::statClass::statClass() {}
+
 
 void statSpace::statClass::set_min(std::vector<float>* file) {
     float min = 0;
