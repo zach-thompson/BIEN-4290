@@ -85,7 +85,7 @@ void statSpace::statClass::make_histogram(std::vector<float>* file, float mean_i
     float* bin_starters = (float*) calloc(num_bins+1, sizeof(float)); // holds the starting values for each bin
     int* bin_counts = (int*) calloc(num_bins+1, sizeof(int)); // holds the number of data points within each bin
 
-    // build histogram bins
+    // create histogram bins
     float bin_starts = first_value;
     for (int i = 0; i <= num_bins; i++) { // loops for the calculated number of bins
         bin_starters[i] = bin_starts; // fills bin_starters with inital bin values
@@ -110,5 +110,8 @@ void statSpace::statClass::make_histogram(std::vector<float>* file, float mean_i
         }
         std::cout << " " << bin_counts[i] << "\n";
     }
+
+    free(bin_starters);
+    free(bin_counts);
     return;
 }
