@@ -3,6 +3,6 @@
 # Date: 2/15/22
 # Description: Performs histogram and correlation analysis on all files within desired folder
 
-echo "Which concentration level would you like to analyze?"
-
-
+echo "Which concentration level would you like to analyze? (00 or 05)"
+read selection
+echo "you selected" $selection
