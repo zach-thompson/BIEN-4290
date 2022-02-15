@@ -1,0 +1,8 @@
+#!/bin/bash
+# Author: Zach Thompson
+# Date: 2/15/22
+# Description: Performs histogram and correlation analysis on all files within desired folder
+
+echo "Which concentration level would you like to analyze?"
+
+
