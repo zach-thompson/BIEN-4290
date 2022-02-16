@@ -7,13 +7,7 @@
 #ifndef corr_guard
 #define corr_guard
 
-#include <iostream>
-#include <fstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <vector>
 #include "thompsz_stats.hpp"
-#include <math.h>
 
 namespace corrSpace {
     class corrClass {
