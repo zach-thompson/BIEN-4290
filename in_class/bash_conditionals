@@ -1,0 +1,39 @@
+#! /bin/bash
+# Zach Thompson
+# 2/16/22
+# In class example
+
+oh="Oh-oh-oh-oh-oh, oh-oh-oh-oh, oh-oh_oh"
+title="Caught in a bad romance"
+ra="Ra-ra-ah-ah-ah"
+roma="Roma Roma-ma"
+gaga="Gaga, Ooh la-la"
+want="Want your romance"
+
+for (( line=0;line<=12;line++ ))
+do
+    if [[ ($line -eq 1) || ($line -eq 3) ]]
+    then
+        echo $oh
+    fi
+    if [[ ($line -eq 2) || ($line -eq 4) ]]
+    then
+        echo $title
+    fi
+    if [[ ($line -eq 5) || ($line -eq 9) ]]
+    then
+        echo $ra
+    fi
+    if [[ ($line -eq 6) || ($line -eq 10) ]]
+    then
+        echo $roma
+    fi
+    if [[ ($line -eq 7) || ($line -eq 11) ]]
+    then
+        echo $gaga
+    fi
+    if [[ ($line -eq 8) || ($line -eq 12) ]]
+    then
+        echo $want
+    fi
+done
