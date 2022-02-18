@@ -37,3 +37,16 @@ do
         echo $want
     fi
 done
+
+fav_movie="Zombeavers"
+cd /home/thompsz/BIEN-4290/
+
+echo $good_movies.txt
+#for line in good_movies.txt
+#do
+    #echo $line
+    #if [ "$movie" = "$fav_mov" ]
+    #then
+    #    echo $fav_mov
+    #fi
+#done

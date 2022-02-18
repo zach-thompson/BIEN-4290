@@ -1,5 +1,5 @@
-
-
+CC = g++
+SHELL = /bin/bash
 
 
 mowin.o: mowin.cpp mowin.hpp
