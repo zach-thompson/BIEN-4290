@@ -3,3 +3,14 @@
 # Author: Zach Thompson
 # Date Due: 2/7/22
 # Description: Basic I/O commands
+
+touch agent_smith
+
+ln -s agent_smith me_too
+ln -s agent_smith mine
+ln -s agent_smith me_two
+ln -s agent_smith me
+ln -s agent_smith me_me
+
+chmod u+w+r agent_smith
+
