@@ -6,3 +6,6 @@
 
 echo "hello world"
 
+echo "unable to find hardware folder"
+
+cp -r Whoville/. Cave/
