@@ -38,15 +38,15 @@ do
     fi
 done
 
-fav_movie="Zombeavers"
-cd /home/thompsz/BIEN-4290/
+fav_movie="Zombeavers" # set favorite movie variable
+readarray -t file < /home/thompsz/good_movies.txt # read good_movies into an array
+length=${#file[@]} # set array length variable
 
-echo $good_movies.txt
-#for line in good_movies.txt
-#do
-    #echo $line
-    #if [ "$movie" = "$fav_mov" ]
-    #then
-    #    echo $fav_mov
-    #fi
-#done
+for (( i=0;i<=length;i++ ))
+do
+    if [[ ${file[i]} = $fav_movie ]]
+    then
+        let i+=1 # good_movies.txt list starts at line 1, not 0
+        echo "$fav_movie is on line $i"
+    fi
+done
