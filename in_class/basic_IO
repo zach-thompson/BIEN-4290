@@ -6,11 +6,12 @@
 
 touch agent_smith
 
-ln -s agent_smith me_too
-ln -s agent_smith mine
-ln -s agent_smith me_two
 ln -s agent_smith me
 ln -s agent_smith me_me
+ln -s agent_smith me_too
 
-chmod u+w+r agent_smith
+chmod 600 agent_smith
 
+ls -l > smith_list.txt
+
+wc -l < smith_list.txt
