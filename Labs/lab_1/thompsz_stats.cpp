@@ -104,10 +104,10 @@ void statSpace::statClass::make_histogram(std::vector<float>* file, float mean_i
     }
     
     // print bins and their counts
-    std::cout << "\nHistogram: Each '=' is 10 points\n\r";
+    std::cout << "\nHistogram: Each '=' is 100 data points\n\r";
     for (int i = 0; i <= num_bins; i++) {
         std::cout << "Bin " << i << " (" << bin_starters[i] << ") \t| ";
-        for (int j = 0; j < bin_counts[i]/10; j++) {
+        for (int j = 0; j < bin_counts[i]/100; j++) {
            std::cout << "=";
         }
         std::cout << " " << bin_counts[i] << "\n";

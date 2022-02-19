@@ -3,17 +3,23 @@
 # Date: 2/15/22
 # Description: Performs histogram and correlation analysis on all files within desired folder
 
-read -p "Which concentration level would you like to analyze? (00 or 05): " selection
-touch EEG_DATA/selected_files.txt
+read -p "Which concentration level would you like to analyze? (00 or 05): " selection # reads input into $selection
+touch EEG_DATA/selected_files.txt # create temp folder
 
-cd EEG_DATA/ERP$selection/
+cd EEG_DATA/ERP$selection/ # navigates to selected folder
 
-for file in *.txt
-    do cat $file >> /home/thompsz/BIEN-4290/lab_1/EEG_DATA/selected_files.txt
+for file in *.txt # for all .txt files in selected folder
+    do cat $file >> /home/thompsz/BIEN-4290/Labs/lab_1/EEG_DATA/selected_files.txt # concatenate files into the temp file
 done
 
-cd ..
+cd .. # navigate back to ./EEG_DATA
 
-cp selected_files.txt catted_input.dat
+cp selected_files.txt catted_input.dat # copy everything from selected_files into catted_input
+rm selected_files.txt # removes temp folder
 
-rm selected_files.txt
+cd .. # navigate back to ./lab_1 
+
+touch ./EEG_DATA/ERP"$selection"_histogram.txt # creates a file to receive the information
+./run >> ./EEG_DATA/ERP"$selection"_histogram.txt # performs statistical analysis on catted_input.dat
+
+echo "Data stored in ./lab_1/EEG_DATA"

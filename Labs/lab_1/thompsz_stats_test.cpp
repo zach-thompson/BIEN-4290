@@ -7,7 +7,7 @@
 
 int main (int argc, char* argv[]) {
 
-    std::ifstream dataFile("ERP00/ERP001.txt");
+    std::ifstream dataFile("EEG_DATA/catted_input.dat");
     std::vector<float> file;
 
     if (!dataFile.is_open()) {
