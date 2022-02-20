@@ -19,7 +19,18 @@ rm selected_files.txt # removes temp folder
 
 cd .. # navigate back to ./lab_1 
 
-touch ./EEG_DATA/ERP"$selection"_histogram.txt # creates a file to receive the information
 ./run >> ./EEG_DATA/ERP"$selection"_histogram.txt # performs statistical analysis on catted_input.dat
 
 echo "Data stored in ./lab_1/EEG_DATA"
+
+for (( i=1;i<=59;i++ ))
+do
+    let next=$i+1
+    if [[ $selection -eq 00 ]]
+    then
+        ./corr ERP$selection/ERP00$i.txt ERP$selection/ERP00$next.txt >> ./EEG_DATA/conc_corr_$selection.csv
+    else
+        echo "$selection.$i vs $selection.$next," >> ./EEG_DATA/conc_corr_$selection.csv
+        ./corr ERP$selection/ERP05.$i.txt ERP$selection/ERP05.$next.txt >> ./EEG_DATA/conc_corr_$selection.csv
+    fi
+done

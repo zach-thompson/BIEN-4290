@@ -7,8 +7,8 @@
 
 int main (int argc, char* argv[]) {
 
-    std::ifstream dataFile1("ERP00/ERP001.txt");
-    std::ifstream dataFile2("ERP00/ERP002.txt");
+    std::ifstream dataFile1(argv[1]);
+    std::ifstream dataFile2(argv[2]);
     std::vector<float> file1;
     std::vector<float> file2;
 
@@ -30,6 +30,6 @@ int main (int argc, char* argv[]) {
 
     corrSpace::corrClass corrClassy(&file1, &file2);
 
-    std::cout << "Correlation: " << corrClassy.calc_corr(&file1, &file2) << "\n";
+    std::cout << corrClassy.calc_corr(&file1, &file2) << "\n";
     return 0;
 }
