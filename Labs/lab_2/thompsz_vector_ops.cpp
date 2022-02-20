@@ -2,13 +2,14 @@
 /*
 * Author: Zach Thompson
 * Date: 2/15/22
-* Description: vector_ops
-* Includes: getters and setter functions for min, max, mean, std
+* Description: Vector operation functions
+* Includes: sum_array, subract_arrays, divide_array
 */
 
-vectorSpace::vectorClass::vectorClass(std::vector<float>* file) {};
-vectorSpace::vectorClass::vectorClass(std::vector<float>* file_x, std::vector<float>* file_y) {};
-vectorSpace::vectorClass::vectorClass(std::vector<float>* file, float) {};
+vectorSpace::vectorClass::vectorClass() {}
+vectorSpace::vectorClass::vectorClass(std::vector<float>* file) {} // for sum_array
+vectorSpace::vectorClass::vectorClass(std::vector<float>* file_x, std::vector<float>* file_y) {} // for subtract_arrays
+vectorSpace::vectorClass::vectorClass(std::vector<float>* file, float) {} // for divide_array
 
 float vectorSpace::vectorClass::sum_array(std::vector<float>* file) {
     float sum = 0;

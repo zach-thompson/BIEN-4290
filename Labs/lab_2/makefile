@@ -2,10 +2,16 @@
 CC = g++
 SHELL = /bin/bash
 
+all: pre_process.o vector_ops.o stats.o
+
 vector_ops.o: thompsz_vector_ops.cpp
 	$(CC) -c $^
 
-thompsz_stats.o: thompsz_stats.cpp thompsz_stats.hpp
+stats.o: thompsz_stats.cpp
 	$(CC) -c $^
 
-all: vector_ops.o thompsz_stats.o
+pre_process.o: thompsz_pre_processing.cpp
+	$(CC) -c $^
+
+clean:
+	rm *.o
