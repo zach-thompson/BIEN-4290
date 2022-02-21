@@ -18,7 +18,7 @@ int main (int argc, char* argv[]) {
     std::vector<float> background_greenData;
     std::fstream file5; // file to which the calibrated data will be written
     file5.open(argv[5]);
-    int num = atoi(argv[6]);
+    int num = atoi(argv[6]); // number of genes to be sequenced
 
     // verify that all files exist and make sure the number of genes requested in within bounds
     if (!file1.is_open() || !file2.is_open() || !file3.is_open() || !file4.is_open() || !file5.is_open()) {
@@ -33,31 +33,31 @@ int main (int argc, char* argv[]) {
     // fill redData vector from file
     float temp;
     while (file1 >> temp) {
-		redData.push_back(temp);
+		  redData.push_back(temp);
     }
     file1.close();
 
     // fill background_redData vector from file
     while (file2 >> temp) {
-		background_redData.push_back(temp);
+		  background_redData.push_back(temp);
     }
     file2.close();
 
     // fill greenData vector from file
     while (file3 >> temp) {
-        greenData.push_back(temp);
+      greenData.push_back(temp);
     }
     file3.close();
 
     // fill background_greenData from file
     while (file4 >> temp) {
-		background_greenData.push_back(temp);
+		  background_greenData.push_back(temp);
     }
     file4.close();
 
     vectorSpace::vectorClass vectorClassy; // create vectorClass object
 
-    // correct the red and green datasets by to their corresponding backgrounds
+    // correct the red and green datasets by their corresponding backgrounds
     std::vector<float> correct_red = vectorClassy.subtract_arrays(&redData, &background_redData);
     std::vector<float> correct_green = vectorClassy.subtract_arrays(&greenData, &background_greenData);
 
@@ -71,7 +71,7 @@ int main (int argc, char* argv[]) {
 
     // write the calculated log intensity ratios to the file specified in the input arguments
     for (int i = 0; i < num; i++) {
-        file5 << std::log10(normal_red[i] / normal_green[i]);
+        file5 << std::log10(normal_red[i] / normal_green[i]) << "\n";
     }
     file5.close();
 

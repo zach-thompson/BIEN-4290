@@ -24,7 +24,7 @@ std::vector<float> vectorSpace::vectorClass::subtract_arrays(std::vector<float>*
     std::vector<float> difference;
 
     for (int i = 0; i < file_x->size(); i++) {
-        difference[i] = file_x->at(i) - file_y->at(i);
+        difference.push_back(file_x->at(i) - file_y->at(i));
     }
 
     return difference;
@@ -35,7 +35,7 @@ std::vector<float> vectorSpace::vectorClass::divide_array(std::vector<float>* fi
     std::vector<float> quotient;
 
     for (int i = 0; i < file->size(); i++) {
-        quotient[i] = file->at(i) / divisor;
+        quotient.push_back(file->at(i) / divisor);
     }
 
     return quotient;
