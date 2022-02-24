@@ -2,7 +2,7 @@
 * Author: Zach Thompson
 * Date: 2/15/22
 * Description: Header file for vector_ops
-* Includes: getters and setter functions for min, max, mean, std
+* Includes: Vector operations object creators, sum_array, subtract_arrays, divide_array
 */
 
 #ifndef vector_ops_guard
