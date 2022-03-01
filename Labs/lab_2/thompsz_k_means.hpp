@@ -19,7 +19,7 @@ namespace kSpace{
     class cluster{
         public:
             // object creation types
-            cluster(std::string name, float mean, std::vector<float> cluster_data);
+            cluster();
 
             // variables
             std::string name;
@@ -32,7 +32,6 @@ namespace kSpace{
             void set_mean(std::vector<float> object);
             float get_mean();
             float distance(float point);
-
     };
 }
 

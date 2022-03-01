@@ -29,6 +29,9 @@ float kSpace::cluster::get_mean() {
     return this->mean;
 }
 
-float kSpace::cluster::distance(float point) {
-    
+float kSpace::cluster::distance(float in) {
+    float point = 0;
+    float temp_dist = 0;
+    temp_dist = abs(point - this->mean);
+    return temp_dist;
 }
