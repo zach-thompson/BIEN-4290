@@ -1,4 +1,9 @@
-wget https://raw.githubusercontent.com/zach-thompson/BIEN-4290/main/Labs/lab_1/thompsz_stats_test.cpp
+wget https://raw.githubusercontent.com/zach-thompson/BIEN-4290/main/Labs/lab_1/thompsz_stats.cpp
+
+cat thompsz_stats.cpp | grep " statSpace::statClass" > file 
+
+rm thompsz_stats.cpp
+
 
 
 
