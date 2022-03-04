@@ -43,10 +43,9 @@ namespace functionSpace {
             std::vector<float> subtract_arrays(std::vector<float>*, std::vector<float>*);
             std::vector<float> divide_array(std::vector<float>*, float);
             float distance_to_mean(float point);
-            
 
         private:
-            // variables
+            // variables, might need to make public later
             float min;
             float max;
             float mean;

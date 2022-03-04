@@ -172,5 +172,3 @@ float functionSpace::function::distance_to_mean(float in) {
 
 functionSpace::function::function() {} // used in set_stddev
 functionSpace::function::function(std::vector<float>* file) {} // used in calc_correlation
-
-int main (void) {}
