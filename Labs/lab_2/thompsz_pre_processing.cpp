@@ -3,7 +3,7 @@
 /*
 * Author: Zach Thompson
 * Date: 2/20/22
-* Description: Calibrates a desired number of genes and prints to file
+* Description: Accepts 6 arguments and prints data to file
 * Arguments: data file1, context file1, data file2, context file2, name of file to create, number of points to calibrate
 * Returns: data filed named "argv[5]"" with calibrated intensity ratios between 2 file sets
 */
