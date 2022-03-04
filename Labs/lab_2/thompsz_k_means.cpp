@@ -104,7 +104,7 @@ int main (int argc, char* argv[]) {
     
     // open gene_list.txt and create files to write to
     FILE* gene_list = fopen("gene_list.txt", "r");
-    FILE* expressed = fopen("exppressed_genes.txt", "w");
+    FILE* expressed = fopen("expressed_genes.txt", "w");
     FILE* suppressed = fopen("suppressed_genes.txt", "w");
     FILE* stationary = fopen("stationary_genes.txt", "w");
     int j = 0;
