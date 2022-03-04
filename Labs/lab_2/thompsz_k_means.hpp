@@ -19,11 +19,11 @@ namespace kSpace{
     class cluster{
         public:
             // object creation types
-            cluster(double mean);
+            cluster(std::string name_in, float mean_in);
 
             // variables
+            float mean;
             std::string name;
-            double mean;
             std::vector<float> cluster_data;
 
             // functions
