@@ -61,9 +61,9 @@ int main (int argc, char* argv[]) {
     kSpace::cluster c3("expressed", 0.5);
 
     std::vector<float> c1_data, c2_data, c3_data;
-    float criteria = 1.0;
-    int c = 0;
-    while (criteria > .0001) {
+    float criteria;
+
+    do {
         // fill clusters
         for (int i = 0; i < data.size(); i++) {
             float d1 = c1.distance(data[i]);
@@ -92,14 +92,12 @@ int main (int argc, char* argv[]) {
         c3.set_mean(c3_data);
 
         // calculate the criteria value by comparing the old mean to the new mean
-        float criteria = c1.distance(old_mean_c1) + c2.distance(old_mean_c2) + c3.distance(old_mean_c3);
+        criteria = c1.distance(old_mean_c1) + c2.distance(old_mean_c2) + c3.distance(old_mean_c3);
         std::cout << "criteria: " << criteria << "\n";
-        std::cout << "interations: " << c << "\n";
-        c++;
 
         // remove all data points from each cluster
         c1_data.clear();
         c2_data.clear();
         c3_data.clear();
-    }
+    } while (criteria > .0001);
 }
