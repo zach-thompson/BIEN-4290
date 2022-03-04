@@ -3,8 +3,9 @@
 * Author: Zach Thompson
 * Date: 2/24/22
 * Description: Performs K-clustering on an input file
-* Includes: tbd
+* Includes: setters and getters for name and mean, and a distance function
 */
+kSpace::cluster::cluster(double mean) {}
 
 void kSpace::cluster::set_name(std::string in) {
     std::string name;
@@ -25,7 +26,7 @@ void kSpace::cluster::set_mean(std::vector<float> object) {
     this->mean = sum / size;
 }
 
-float kSpace::cluster::get_mean() {
+double kSpace::cluster::get_mean() {
     return this->mean;
 }
 

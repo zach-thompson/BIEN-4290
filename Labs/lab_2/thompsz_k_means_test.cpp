@@ -7,7 +7,7 @@
 */
 
 int main (int argc, char* argv[]) {
-    std::ifstream file1("log_ratio_input.dat"); // file containing data from sporulating cells (red)
+    std::ifstream file1("intensity_0.dat"); // file containing data from sporulating cells (red)
     std::vector<float> data;
 
     if (!file1.is_open()) {
@@ -21,14 +21,13 @@ int main (int argc, char* argv[]) {
     }
     file1.close();
 
-    kSpace::cluster c1();
-    kSpace::cluster c2();
-    kSpace::cluster c3();
+    kSpace::cluster clustery(22.2);
 
-    // c1.set_name("suppressed");
-    // c1.set_mean(-0.5);
-    // c2.set_name("stationary");
-    // c2.set_mean(0);
-    // c3.set_name("expressed");
-    // c3.set_mean(0.5);
+    kSpace::cluster c1(-0.5);
+    kSpace::cluster c2(0.0);
+    kSpace::cluster c3(0.5);
+
+    c1.set_name("suppressed");
+    c2.set_name("stationary");
+    c3.set_name("expressed");
 }
