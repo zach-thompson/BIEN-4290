@@ -14,7 +14,7 @@ pre_process.o: thompsz_pre_processing.cpp
 	$(CC) -c $^
 
 k_means.o: thompsz_k_means.cpp
-	$(CC) -c $^
+	$(CC) -o run $^
 
 clean:
 	rm *.o
