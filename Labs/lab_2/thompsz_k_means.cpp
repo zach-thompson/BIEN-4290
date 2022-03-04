@@ -44,14 +44,14 @@ int main (int argc, char* argv[]) {
     std::ifstream file1("intensity_0.dat"); // file containing data from sporulating cells (red)
     std::vector<float> data; // vector to hold file data
 
-    if (!file1.is_open()) { // determine if file exists
+    if (!file1.is_open()) { // determine if both files exists
         printf("A data file cannot be found.\n");
         return 0;
     }
 
     float temp;
     while (file1 >> temp) { // fill vector from file
-		  data.push_back(temp);
+		data.push_back(temp);
     }
     file1.close();
 
@@ -66,11 +66,13 @@ int main (int argc, char* argv[]) {
     do {
         // fill clusters
         for (int i = 0; i < data.size(); i++) {
+            // calculate distance from point to each cluster mean
             float d1 = c1.distance(data[i]);
             float d2 = c2.distance(data[i]);
             float d3 = c3.distance(data[i]);
 
-            if (d1 <= d2) {
+            // assign each point to the appropriate cluster
+            if ((d1 <= d2) && (d1 <= d3)) {
                 c1_data.push_back(data[i]);
             }
             else if (d2 <= d3) {
@@ -93,11 +95,52 @@ int main (int argc, char* argv[]) {
 
         // calculate the criteria value by comparing the old mean to the new mean
         criteria = c1.distance(old_mean_c1) + c2.distance(old_mean_c2) + c3.distance(old_mean_c3);
-        std::cout << "criteria: " << criteria << "\n";
 
         // remove all data points from each cluster
         c1_data.clear();
         c2_data.clear();
         c3_data.clear();
     } while (criteria > .0001);
+    
+    // open gene_list.txt and create files to write to
+    FILE* gene_list = fopen("gene_list.txt", "r");
+    FILE* expressed = fopen("exppressed_genes.txt", "w");
+    FILE* suppressed = fopen("suppressed_genes.txt", "w");
+    FILE* stationary = fopen("stationary_genes.txt", "w");
+    int j = 0;
+
+    if (gene_list != NULL) {
+        char gene[10];
+        //fgets(gene, 10, gene_list); // load first gene
+        while (!feof (gene_list))
+        {
+            // establish values (basically redoing last loop of clustering)
+            float point = data[j];
+            float d1 = c1.distance(point);
+            float d2 = c2.distance(point);
+            float d3 = c3.distance(point);
+            fgets(gene, 10, gene_list); // load gene
+        
+            // add gene to appropriate file
+            if (d1 <= d2 && d1 <= d3) {
+                fprintf(suppressed, "%s", gene);
+            }
+            else if (d2 <= d3) {
+                fprintf(stationary, "%s", gene);
+            }
+            else {
+                fprintf(expressed, "%s", gene);
+            }
+            j++;
+            // fgets(gene, 10, gene_list); // load next gene  
+        }
+        fclose(gene_list);
+        fclose(suppressed);
+        fclose(stationary);
+        fclose(expressed);
+        return 0;
+    }
+
+
+
 }
