@@ -109,9 +109,8 @@ int main (int argc, char* argv[]) {
     FILE* stationary = fopen("stationary_genes.txt", "w");
     int j = 0;
 
-    if (gene_list != NULL) {
+    if (gene_list != NULL) { // run while gene_list is open
         char gene[10];
-        //fgets(gene, 10, gene_list); // load first gene
         while (!feof (gene_list))
         {
             // establish values (basically redoing last loop of clustering)
@@ -119,7 +118,7 @@ int main (int argc, char* argv[]) {
             float d1 = c1.distance(point);
             float d2 = c2.distance(point);
             float d3 = c3.distance(point);
-            fgets(gene, 10, gene_list); // load gene
+            fgets(gene, 10, gene_list); // get gene from gene_list, one line at a time
         
             // add gene to appropriate file
             if (d1 <= d2 && d1 <= d3) {
@@ -131,9 +130,10 @@ int main (int argc, char* argv[]) {
             else {
                 fprintf(expressed, "%s", gene);
             }
-            j++;
-            // fgets(gene, 10, gene_list); // load next gene  
+            j++;  
         }
+        
+        // close all files
         fclose(gene_list);
         fclose(suppressed);
         fclose(stationary);
