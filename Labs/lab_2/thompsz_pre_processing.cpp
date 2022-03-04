@@ -3,7 +3,9 @@
 /*
 * Author: Zach Thompson
 * Date: 2/20/22
-* Description: Main file for pre-processing
+* Description: Calibrates a desired number of genes and prints to file
+* Arguments: data file1, context file1, data file2, context file2, name of file to create, number of points to calibrate
+* Returns: data filed named "argv[5]"" with calibrated intensity ratios between 2 file sets
 */
 
 int main (int argc, char* argv[]) {

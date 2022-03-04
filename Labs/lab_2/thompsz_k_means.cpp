@@ -30,7 +30,7 @@ void kSpace::cluster::set_mean(std::vector<float> object) {
     this->mean = sum / size;
 }
 
-double kSpace::cluster::get_mean() {
+float kSpace::cluster::get_mean() {
     return this->mean;
 }
 

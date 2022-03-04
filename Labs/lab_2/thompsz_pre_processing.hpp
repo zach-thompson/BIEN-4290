@@ -2,7 +2,7 @@
 * Author: Zach Thompson
 * Date: 2/20/22
 * Description: Header file for pre-processing
-* Includes: Class definition for object with 6 command line arguments
+* Includes: Class definition for executable with 6 command line arguments
 */
 
 #ifndef PROC_GUARD
