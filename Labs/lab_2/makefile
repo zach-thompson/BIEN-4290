@@ -4,6 +4,8 @@ SHELL = /bin/bash
 
 all: pre_process.o vector_ops.o stats.o k_means.o
 
+liblab_2
+
 vector_ops.o: thompsz_vector_ops.cpp
 	$(CC) -c $^
 
