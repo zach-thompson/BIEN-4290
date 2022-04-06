@@ -1,3 +1,9 @@
+#! /bin/bash
+
+# Author: Zach Thompson
+# Date Due: 2/21/22
+# Description: Practicing wget
+
 wget https://raw.githubusercontent.com/zach-thompson/BIEN-4290/main/Labs/lab_1/thompsz_stats.cpp
 
 cat thompsz_stats.cpp | grep " statSpace::statClass" > file 
