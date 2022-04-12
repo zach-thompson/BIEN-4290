@@ -22,6 +22,8 @@ class BloodyMary{
             // static type - associated with class, but doesn't require an instance
             static BloodyMary* makeDrink(Bloodies); // Key factory function - return object of given type
 
+            virtual BloodyMary* makeDrink() = 0; // framework for making blood mary factories
+
             virtual void mix() = 0; // Pure virtual function, MUST define this function to inherit from BloodyMary
             
             virtual std::string chaser() = 0;
@@ -44,6 +46,10 @@ class BloodyMary{
             std::string drink_name;
             std::string liquor_type;
 };
+
+static BloodyMary* BloodyMary::makeDrink(bloodies blood) {
+    switch(blood)
+}
 
 class Hollander : public BloodyMary { // How to entail inheritance in C++
     public:
