@@ -1,4 +1,4 @@
-#include "/home/thompsz/Labs/lab_1/thompsz_stats.hpp"
+#include "../../Labs/lab_1/thompsz_stats.hpp"
 /*
 * Author: Zach Thompson
 * Date: 4/12/2022
@@ -9,7 +9,7 @@ int main (int argc, char* argv[]) {
 
     // load file from command line argument
     // argument expected to be "swallowspeed.dat" for this project
-    std::ifstream file1(argv[1])
+    std::ifstream file1(argv[1]);
 
     // check for file
     if (!file1.is_open()) {
@@ -25,17 +25,17 @@ int main (int argc, char* argv[]) {
     }
     file1.close();
 
-    // establish statClass tp use functions
-    statSpace::statClass statClassy(&data);
+    // establish statClass to use functions
+    statSpace::statClass statClass(&data);
 
     // perform calculations and print results
-    statClassy.set_min(&data);
-    std::cout << "minimum: " << statClassy.get_min() << "\n";
-    statClassy.set_max(&data);
-    std::cout << "maximum: " << statClassy.get_max() << "\n";
-    statClassy.set_mean(&data);
-    std::cout << "mean: " << statClassy.get_mean() << "\n";
-    statClassy.set_stddev(&data);
-    std::cout << "std_dev: " << statClassy.get_stddev() << "\n";
+    statClass.set_min(&data);
+    std::cout << "minimum: " << statClass.get_min() << "\n";
+    statClass.set_max(&data);
+    std::cout << "maximum: " << statClass.get_max() << "\n";
+    statClass.set_mean(&data);
+    std::cout << "mean: " << statClass.get_mean() << "\n";
+    statClass.set_stddev(&data);
+    std::cout << "std_dev: " << statClass.get_stddev() << "\n";
     
 }
