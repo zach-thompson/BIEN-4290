@@ -10,5 +10,5 @@ class Drug{
 
     protected:
         std::string name;
-        std::vector<Ingredient>* ingreds;
+        std::vector<Ingredient>* ingredients;
 };

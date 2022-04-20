@@ -4,9 +4,6 @@
 * Date: 4/20/2022
 * Description: Implementation for non virtual functions in ingredients.hpp
 */
-int main() {
-    return 0;
-}
 
 Ingredient::Ingredient(std::string name, int quantity, std::string path) {
 	this->name = name;
@@ -157,3 +154,7 @@ class Colorings : public Ingredient {
 			this->quantity = quantity;
 		}
 };
+
+int main() {
+    return 0;
+}
