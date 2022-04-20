@@ -12,18 +12,26 @@ class JollyRancher : public Drug(std::string name, std::vector<Ingredient>* ingr
 
             // add private ingredients to ingredient list
             ingredientList.push_back(&sugar);
-            toppingList.push_back(&corn syrup);
+            ingredientList.push_back(&corn_syrup);
+            ingredientList.push_back(&starch);
+            ingredientList.push_back(&oil);
+            ingredientList.push_back(&citric_acid);
+            ingredientList.push_back(&colorings);
         }
 
         std::string getName() override { // "override" not required, but ensures that the thing begin overwritten exists
-            return name;
+            return this.name;
         }
 
         std::vector<Topping*>& getIngredients() override {
-            return ingredientList;
+            return this.ingredientList;
         }
 
         private:
             Ingredient sugar;
-            Ingredient corn syrup;
+            Ingredient corn_syrup;
+            Ingredient starch
+            Ingredient oil
+            Ingredient citric_acid
+            Ingredient colorings
 };
