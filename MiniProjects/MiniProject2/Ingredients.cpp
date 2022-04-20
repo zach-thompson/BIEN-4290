@@ -16,7 +16,6 @@ Ingredient::Ingredient(std::string name, int quantity, std::string path) {
 
 Ingredient::Ingredient(std::string name, std::string path) {
 	this->name = name;
-	//this->quantity = quantity;
 	this->path = path;
 }
 
@@ -139,7 +138,7 @@ class Citric_Acid : public Ingredient {
 class Colorings : public Ingredient {
 	public:
 		Colorings() : Ingredient("colorings", "path") {
-
+            
         }
 		
         std::string getName() override {
