@@ -16,8 +16,7 @@ class Candy : public Drug {
         Candy() : Drug("Jolly Rancher", ingredients) {
 
             // add private ingredients to ingredient list
-            /*
-            ingredientList.push_back(&sugar);
+            ingredients.push_back(&sugar); /*
             ingredientList.push_back(&corn_syrup);
             ingredientList.push_back(&starch);
             ingredientList.push_back(&oil);
@@ -32,15 +31,14 @@ class Candy : public Drug {
         std::vector<Ingredient>* getIngredients() override {
             return ingredients;
         }
-
-        /*
-        private:
-            Sugar sugar;
+        
+        protected:
+            Sugar sugar; /*
             Corn_Syrup corn_syrup;
-            Starch starch
-            Oil oil
-            Citric_Acid citric_acid
-            Colorings colorings */
+            Starch starch;
+            Oil oil;
+            Citric_Acid citric_acid;
+            Colorings colorings; */
 };
 
 int main() {
