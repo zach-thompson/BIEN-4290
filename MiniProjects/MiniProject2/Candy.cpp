@@ -6,7 +6,7 @@
 * Description: Class should inherit from drug.hpp to make a candy (Jolly Rancher Gummy)
 */
 
-class JollyRancher : public Drug(std::string name, std::vector<Ingredient>* ingredientList)
+class JollyRancher : public Drug(std::string name, std::vector<Ingredient>* ingredientList) {
     public:
         JollyRancher() : Drug("Jolly Rancher", ingredientList) {
 
@@ -20,11 +20,11 @@ class JollyRancher : public Drug(std::string name, std::vector<Ingredient>* ingr
         }
 
         std::string getName() override { // "override" not required, but ensures that the thing begin overwritten exists
-            return this.name;
+            return Drug.name;
         }
 
-        std::vector<Topping*>& getIngredients() override {
-            return this.ingredientList;
+        std::vector<ingredientList*>& getIngredients() override {
+            return Drug.ingredientList;
         }
 
         private:
