@@ -1,13 +1,14 @@
-
+#include "ingredient.hpp"
+#include <vector>
 
 class Drug{    
     public:
-        void Drug(std::string name, std::vector<Ingredient>* ingredientList);
+        Drug(std::string name, std::vector<Ingredient>* ingredientList);
 
         virtual std::string getName() = 0;
         virtual std::vector<Ingredient>* getIngredients() = 0;
 
-    private:
+    protected:
         std::string name;
         std::vector<Ingredient>* ingreds;
 };
