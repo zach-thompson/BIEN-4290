@@ -14,11 +14,10 @@ fi
 # Create local makefile to write to
 cd $1
 touch makefile
-echo -e "# Zach's Midterm makefile\n\nCC = g++ \nSHELL = /bin/bash\n" > makefile
+echo -e "# Zach's Midterm makefile\n\nCC = g++\nSHELL = /bin/bash\n" > makefile
 
 # Run through all files in directory to find ones named *.cpp
-# Run through .cpp files to find one that includes "main("
-# Save that file name under "executable"
+# Run through .cpp files to find one that includes "main(", use -o
 # Add file names to makefile with appropriate commands
 for FILE in *
 do
@@ -28,7 +27,7 @@ do
         
         if (grep -q "main(" $FILE)
         then
-        executable=$(echo "$FILE" | sed 's/.cpp/.o/')  >> makefile
+        executable=($(basename $1))
         echo -e "\t"'$(CC)' "-o" "$executable" '$^\n'  >> makefile
         else
         echo -e "\t"'$(CC)' "-c" '$^\n'  >> makefile
@@ -37,9 +36,13 @@ do
 
 done
 
-# Create "all" target
-targets=$(grep ":" makefile | cut -d ":" -f1 | tr '\n' ' ') # stores lines with ":" and cuts after it, converts newline to " "
+# Create "all" target including all .cpp targets
+targets=$(grep ":" makefile | cut -d ":" -f1 | tr '\n' ' ') # stores lines with a colon and cuts after it, converts newline to " "
 echo "all: $targets" >> makefile
 
 # Create "clean" target
-echo -e "\nclean:\n\trm *.o" >> makefile
+echo -e "\nclean:\n\trm *.o\n\trm *.gch\n" >> makefile
+
+# Once the makefile is ready, perform a make all and run the executable
+make all
+bash ./$executable
