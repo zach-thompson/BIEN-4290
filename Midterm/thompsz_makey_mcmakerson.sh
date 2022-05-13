@@ -21,18 +21,18 @@ echo -e "# Zach's midterm makefile\n\nCC = g++\nSHELL = /bin/bash\n" > makefile
 # Add file names to makefile with appropriate commands
 for FILE in *
 do
-    if (grep -q "#include" "$FILE" && grep -q ".hpp" "$FILE")
+    if (grep -q "#include" "$FILE" && grep -q ".hpp" "$FILE") # identifies which files include headers
     then
-        target=$(echo -n "$FILE" | sed 's/.cpp/.o/')
-        included=$(grep ".hpp" $FILE | tr -d '#"' | sed 's/include //g' | tr '\n' ' ' | sed 's/.hpp/.o/' | sed 's/'$target'//')
+        target=$(echo -n "$FILE" | sed 's/.cpp/.o/') # converts name from *.cpp to *.o
+        included=$(grep ".hpp" $FILE | tr -d '#"' | sed 's/include //g' | tr '\n' ' ' | sed 's/.hpp/.o/g' | sed 's/'$target'//') # stores all included header files
     fi
 
-    if (echo "$FILE" | grep -q ".cpp")
+    if (echo "$FILE" | grep -q ".cpp") # looks for .cpp files
     then        
-        if (grep -q "main(" $FILE)
+        if (grep -q "main(" $FILE) # determines which .cpp contains a main function
         then
         echo -n "$FILE: $FILE " | sed 's/.cpp/.o/' >> makefile # prints target.o: target.cpp, no newline
-        echo $included | sed 's/.hpp/.o/' >> makefile # prints included targets
+        echo $included >> makefile # prints included targets
         executable=$(basename $1)
         echo -e "\t"'$(CC)' "-o" "$executable" '$^\n'  >> makefile # prints compile line with executable (name of folder)
         else
