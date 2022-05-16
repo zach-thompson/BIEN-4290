@@ -15,6 +15,7 @@ k_means.o: thompsz_k_means.cpp
 	$(CC) -o cluster $^
 
 all: pre_process.o vector_ops stats k_means.o
+
 clean:
 	rm *.o
 	rm process
