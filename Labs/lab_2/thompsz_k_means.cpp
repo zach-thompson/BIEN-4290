@@ -101,14 +101,18 @@ int main (int argc, char* argv[]) {
         c2_data.clear();
         c3_data.clear();
     } while (criteria > .0001);
+
+    // output final cluster means to standard output
+    std::cout << "Final suppressed_cluster mean: " << c1.get_mean() << std::endl;
+    std::cout << "Final stationary_cluster mean: " << c2.get_mean() << std::endl;
+    std::cout << "Final expressed_cluster mean: " << c3.get_mean() << std::endl;
     
     // open gene_list.txt and create files to write to
     FILE* gene_list = fopen("gene_list.txt", "r");
-    FILE* expressed = fopen("expressed_genes.txt", "w");
     FILE* suppressed = fopen("suppressed_genes.txt", "w");
     FILE* stationary = fopen("stationary_genes.txt", "w");
+    FILE* expressed = fopen("expressed_genes.txt", "w");
     int j = 0;
-
     if (gene_list != NULL) { // run while gene_list is open
         char gene[10];
         while (!feof (gene_list))
@@ -132,7 +136,7 @@ int main (int argc, char* argv[]) {
             }
             j++;  
         }
-        
+         
         // close all files
         fclose(gene_list);
         fclose(suppressed);
