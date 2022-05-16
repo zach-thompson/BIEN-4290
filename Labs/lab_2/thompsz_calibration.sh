@@ -22,19 +22,18 @@ do
     # run clustering program and write results to new file
     ./cluster "log_ratio_$i.dat"
     # copy the cluster output files to files who denote the corresponding time point 
+    cp suppressed_genes.txt "suppressed_$i.txt"
+    cp stationary_genes.txt "stationary_$i.txt"
     cp expressed_genes.txt "expressed_$i.txt"
-    cp suppressed_genes.txt "suppressed_$i.txt"
-    cp stationary_genes.txt "stationary_$i.txt"
-    # write the cluster means and number of members in each cluster to a separate file for each time point
-    wc -l "expressed_$i.txt" > "clusters_$i.txt"
-    cp suppressed_genes.txt "suppressed_$i.txt"
-    wc -l "suppressed_$i.txt" >> "clusters_$i.txt"
-    cp stationary_genes.txt "stationary_$i.txt"
-    wc -l "stationary_$i.txt" >> "clusters_$i.txt"
+    # write the  number of members in each cluster to a separate file for each time point
+    touch summary.txt
+    echo -n "Suppressed genes at time point $1: " >> summary.txt
+    wc -l "suppressed_$i.txt" >> summary.txt
+    echo -n "Stationary genes at time point $1: " >> summary.txt
+    wc -l "stationary_$i.txt" >> summary.txt
+    echo -n "expressed genes at time point $1: " >> summary.txt
+    wc -l "expressed_$i.txt" >> summary.txt
     (( i++ ))
-    
-#done
+done
 
-# Create summary file
-cat clusters_* > summary.txt
 rm -f clusters_*
