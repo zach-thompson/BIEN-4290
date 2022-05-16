@@ -41,7 +41,7 @@ float kSpace::cluster::distance(float in) {
 }
 
 int main (int argc, char* argv[]) {
-    std::ifstream file1(argv[1]); // log_ratio_intensity.dat
+    std::ifstream file1(argv[1]); // log_ratio_[0-6].dat
     std::vector<float> data; // vector to hold file data
 
     if (!file1.is_open()) { // determine if file exists

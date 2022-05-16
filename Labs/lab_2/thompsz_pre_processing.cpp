@@ -18,7 +18,7 @@ int main (int argc, char* argv[]) {
     std::vector<float> greenData;
     std::ifstream file4(argv[4]); // file containing the correlating background green data
     std::vector<float> background_greenData;
-    std::fstream file5; // file to which the calibrated data will be written
+    std::ofstream file5; // file to which the calibrated data will be written
     file5.open(argv[5]);
     int num = atoi(argv[6]); // number of genes to be sequenced
 
