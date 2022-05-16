@@ -9,15 +9,15 @@ read -p "Enter the gene to be queried: " gene
 
 # locate the gene at each time point and output its status
 i=0
-while ($i -le 6)  # loop through the files
+while  [ $i -le 6 ]  # loop through the files
 do
-    if ($(grep -o $gene "suppressed_$i.txt" | wc -l))
+    if ($(grep -q $gene "suppressed_$i.txt"))
     then
         echo "At time point $i: $gene was suppressed"
-    elif ($(grep -o $gene "stationary_$i.txt" | wc -l))
+    elif ($(grep -q $gene "stationary_$i.txt"))
     then
         echo "At time point $i: $gene was stationary"
-    elif ($(grep -o $gene "expressed_$i.txt" | wc -l))
+    elif ($(grep -q $gene "expressed_$i.txt"))
     then 
         echo "At time point $i: $gene was expressed"
     else
