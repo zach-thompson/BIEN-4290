@@ -8,11 +8,11 @@ vector_ops: thompsz_vector_ops.cpp
 stats: thompsz_stats.cpp
 	$(CC) -c $^
 
-pre_process: thompsz_pre_processing.cpp
-	$(CC) -c $^
+pre_process.o: thompsz_pre_processing.cpp thompsz_vector_ops.cpp
+	$(CC) -o process $^
 
 k_means.o: thompsz_k_means.cpp
-	$(CC) -o run $^
+	$(CC) -o cluster $^
 
 all: pre_process vector_ops stats k_means.o
 clean:
