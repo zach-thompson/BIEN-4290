@@ -41,10 +41,10 @@ float kSpace::cluster::distance(float in) {
 }
 
 int main (int argc, char* argv[]) {
-    std::ifstream file1("intensity_0.dat"); // file containing data from sporulating cells (red)
+    std::ifstream file1(argv[1]); // log_ratio_intensity.dat
     std::vector<float> data; // vector to hold file data
 
-    if (!file1.is_open()) { // determine if both files exists
+    if (!file1.is_open()) { // determine if file exists
         printf("A data file cannot be found.\n");
         return 0;
     }
@@ -140,7 +140,4 @@ int main (int argc, char* argv[]) {
         fclose(expressed);
         return 0;
     }
-
-
-
 }
