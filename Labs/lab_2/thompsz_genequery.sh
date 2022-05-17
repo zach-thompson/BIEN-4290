@@ -8,6 +8,7 @@
 read -p "Enter the gene to be queried: " gene
 
 # locate the gene at each time point and output its status
+cd results/
 i=0
 while  [ $i -le 6 ]  # loop through the files
 do
