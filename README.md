@@ -1,4 +1,3 @@
 # BIEN_4290
-Contains all the code from BIEN 4290 - Spring 2022
 
-Testing coms
+Contains all classwork from Biocomputing Lab II (BIEN 4290) - Spring 2022
