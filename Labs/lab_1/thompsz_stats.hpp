@@ -21,6 +21,7 @@ namespace statSpace {
 
             // construct statClass object with a data file
             statClass(std::vector<float>*);
+            statClass();
 
             void set_min(std::vector<float>*);
             void set_max(std::vector<float>*);

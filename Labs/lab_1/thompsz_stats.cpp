@@ -7,7 +7,9 @@
 * Includes: Definitions for the get- and set- functions for min, max, mean, std, and histogram
 */
 
-statSpace::statClass::statClass(std::vector<float>* file) {} // used in set_stddev
+statSpace::statClass::statClass(std::vector<float>* file) {}
+statSpace::statClass::statClass() {}
+
 
 void statSpace::statClass::set_min(std::vector<float>* file) {
     float min = 0;

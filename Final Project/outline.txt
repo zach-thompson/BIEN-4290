@@ -1,0 +1,17 @@
+Steps:
+Boundary extension
+Low-pass filtering
+DFT
+Convolution with filter
+Inverse DFT
+Windowing
+Regional max (we have to write*)
+Dilation *
+Centroid *
+
+// For the low pass filter, run first with relaxed restrictions - then average nearest distance to each local max and use that value as the cutoff for the second filtering
+
+Other notes
+CLMG library / OpenCV library also an option
+Convert MATLAB functions to C++
+Create a point class to hold coordinates
